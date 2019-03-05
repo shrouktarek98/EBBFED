@@ -1,0 +1,54 @@
+.sportsmagazine-subheader {
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+form {
+    margin-top: 0px;
+}
+
+.cat-wrap #categories option {
+    font-size: 16px;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+}
+
+select,
+input,
+button {
+    text-transform: none;
+    font-size: large;
+    font-weight: 400;
+    height: 45px;
+}
+
+button {
+    background-color: #f0eef0;
+    border: 1px solid #dfdfdf;
+    color: #666666;
+    padding-right: 24px;
+}
+
+h2 {
+    font-size: 25px;
+}
+
+.sportsmagazine-player-grid-text {
+    text-align: right;
+    height: 100px;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+img {
+    height: 250px;
+    width: 100%;
+}
+
+.sportsmagazine-player-grid-text h5 {
+    font-size: 18px;
+}
+
+.sportsmagazine-player-grid-text p {
+    color: #666666;
+}

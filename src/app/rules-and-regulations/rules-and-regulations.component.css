@@ -1,0 +1,53 @@
+.sportsmagazine-subheader {
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+form {
+    margin-top: 0px;
+}
+
+.cat-wrap #categories option {
+    font-size: 16px;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+}
+
+select,
+input,
+button {
+    text-transform: none;
+    font-size: large;
+    font-weight: 400;
+    height: 45px;
+}
+
+button {
+    background-color: #f0eef0;
+    border: 1px solid #dfdfdf;
+    color: #666666;
+    padding-right: 15px;
+}
+
+h2 {
+    font-size: 15px;
+}
+
+.Roles {
+    direction: rtl;
+    text-align: right;
+    margin-bottom: 15px;
+}
+
+.profisional_players {
+    padding: 10px;
+    font-size: 15px;
+    text-decoration: none;
+}
+
+.sportsmagazine-widget-heading h2::before,
+.sportsmagazine-widget-heading h2::after,
+.sportsmagazine-section-heading h2::before,
+.sportsmagazine-section-heading h2::after {
+    right: 0;
+}

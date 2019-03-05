@@ -1,0 +1,155 @@
+<!--// Main Content \\-->
+<div class="sportsmagazine-main-content sportsmagazine-main-contentminus">
+
+    <!--// Main Section \\-->
+    <div class="sportsmagazine-main-section sportsmagazine-thumb sportsmagazine-player-thumb">
+        <span class="thumb-transparent"></span>
+
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-12">
+                    <div class="sportsmagazine-player-thumb-wrap club-details">
+                        <figure><img src="http://yakensolution.cloudapp.net/EBBFED/Content/Images/{{clubdetails.Logo}}" alt=""></figure>
+                        <div class="sportsmagazine-player-thumb-text">
+                            <h3> <br><span> {{clubdetails.NameA}}  </span></h3>
+                            <ul class="sportsmagazine-player-info">
+                                <li>
+                                    <h5> المنطقه</h5>
+                                    <span> {{clubdetails.Area.NameA}} </span>
+                                </li>
+                                <li>
+                                    <h5>ألقاب سبق الفوز بها:</h5>
+                                    <span [innerHtml]="clubdetails.TitlesWon"> </span>
+                                </li>
+                                <li>
+                                    <h5>سنه التاسيس:</h5>
+                                    <span>منذ عام {{clubdetails.EstablishedYear}} </span>
+                                </li>
+
+
+
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!--// Main Section \\-->
+
+    <!--// Main Section \\-->
+    <div class="sportsmagazine-main-section">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-8">
+                    <div class="sportsmagazine-section-heading">
+                        <h2> نبذه عن النادي : </h2>
+                    </div>
+                    <div class="sportsmagazine-rich-editor">
+                        <blockquote [innerHtml]="clubdetails.DescriptionA">
+                            <span></span>
+                        </blockquote>
+
+                        <div class="sportsmagazine-post-tags">
+
+                            <div class="sportsmagazine-blog-social">
+                                <ul *ngFor="let contact of arraycontact">
+                                    <li><a [routerLink]="['/clubdetails',clubdetails.ID]" (click)="showpage(contact.FacebookURL)" class="color-one"><i class="fa fa-facebook"></i>فيس بوك</a></li>
+                                    <li><a [routerLink]="['/clubdetails',clubdetails.ID]" (click)="showpage(contact.TwitterURL)" class="color-two"><i class="fa fa-twitter"></i>تويتر</a></li>
+                                    <li><a [routerLink]="['/clubdetails',clubdetails.ID]" (click)="showpage(contact.YoutubeURL)" class="color-three"><i class="fa fa-youtube"></i>يوتيوب</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sportsmagazine-section-heading">
+                        <h2>صور النادي </h2>
+                    </div>
+
+                    <div class="sportsmagazine-gallery sportsmagazine-fixture-gallery">
+                        <ul>
+                            <li *ngFor="let gallery of arraygallery">
+                                <div *ngFor="let club of gallery.Clubs">
+                                    <figure *ngIf="club.ID == clubdetails.ID">
+                                        <a target="_blank" data-fancybox-group="group" href="http://yakensolution.cloudapp.net/EBBFED/Content/Images/{{gallery.ImageUrl}}" class="fancybox"><img src="http://yakensolution.cloudapp.net/EBBFED/Content/Images/{{gallery.ImageUrl}}" alt=""><i class="icon-signs23"></i></a>
+
+                                        <figcaption>
+                                            <time datetime="">{{gallery.Date | date:'yyyy-MM-dd'.toLocaleDateString}}</time>
+                                            <h6>
+                                                <a class="galleryclub" [innerHtml]='gallery.DescriptionA'></a>
+                                            </h6>
+
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="sportsmagazine-section-heading">
+                        <h2>لاعبى النادي </h2>
+                    </div>
+
+                    <div class="sportsmagazine-gallery sportsmagazine-fixture-gallery">
+                        <ul class="row">
+
+                            <li *ngFor="let player of arrayplayers">
+                                <div *ngIf="player.ClubID == clubdetails.ID">
+                                    <figure>
+                                        <a [routerLink]="['/playerdetails',player.ID]"><img src="http://yakensolution.cloudapp.net/EBBFED/Content/Images/{{player.ImageUrl}}" alt=""><i class="fa fa-link"></i></a><span></span></figure>
+                                    <div class="sportsmagazine-player-grid-text">
+                                        <h5><a [routerLink]="['/playerdetails',player.ID]">{{player.NameA}}</a></h5>
+                                        <p> <i class=" fa fa-user"> </i> {{player.Age}} سنه <span class="club_name"><i class=" fa fa-fort-awesome">
+                                                                        </i> {{player.ClubName}}</span></p>
+
+                                    </div>
+                                </div>
+
+                            </li>
+
+                        </ul>
+                    </div>
+
+
+                </div>
+
+                <!--// SideBar \\-->
+                <aside class="col-md-4">
+
+                    <!--// Widget Upcoming Matches \\-->
+                    <div class="sportsmagazine-widget-heading">
+                        <h2>المباريات القادمة</h2>
+                    </div>
+                    <div class="widget widget_matches">
+                        <ul>
+                            <li *ngFor="let item of list">
+                                <div class="sportsmagazine-team-one">
+                                    <h6><a href="fixture-detail.html">اسم الفريق</a></h6>
+                                    <span>مباراه</span>
+                                </div>
+                                <span>VS</span>
+                                <div class="sportsmagazine-team-two">
+                                    <h6><a href="fixture-detail.html">اسم الفريق</a></h6>
+                                    <span>مباراه</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--// Widget Upcoming Matches \\-->
+
+
+
+
+                </aside>
+                <!--// SideBar \\-->
+
+
+            </div>
+        </div>
+    </div>
+    <!--// Main Section \\-->
+
+</div>
+<!--// Main Content \\-->

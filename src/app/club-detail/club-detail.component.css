@@ -1,0 +1,68 @@
+.sportsmagazine-player-thumb {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.sportsmagazine-main-section,
+.sportsmagazine-rich-editor,
+.portsmagazine-post-tags,
+.widget_matches,
+aside,
+ul,
+li,
+a {
+    direction: rtl;
+    text-align: right;
+}
+
+ul,
+.sportsmagazine-blog-social {
+    width: 100%;
+}
+
+li h5 {
+    font-size: 18px;
+}
+
+li span {
+    font-size: 15px;
+}
+
+blockquote::after {
+    left: 30px;
+    right: auto;
+}
+
+blockquote span::before {
+    left: 0px;
+    right: auto;
+}
+
+.sportsmagazine-player-grid-text {
+    text-align: right;
+    height: 100px;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.sportsmagazine-player-thumb-wrap img {
+    height: 100%;
+}
+
+img {
+    height: 250px;
+    width: 100%;
+}
+
+.sportsmagazine-player-grid-text h5 {
+    font-size: 18px;
+}
+
+.sportsmagazine-player-grid-text p {
+    color: #666666;
+}
+
+h1 {
+    color: #fff;
+}

@@ -1,0 +1,95 @@
+<!--// SubHeader \\-->
+<div class="sportsmagazine-subheader">
+    <span class="subheader-transparent"></span>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1> نتائج المباريات </h1>
+            </div>
+            <div class="col-md-12">
+                <ul class="sportsmagazine-breadcrumb">
+                    <li [ngStyle]="{'font-size': '14px', 'font-weight': '700'}"><a href="index-2.html">الفرق الوطنيه</a></li>
+                    <li [ngStyle]="{'font-size': '14px', 'font-weight': '700'}"> نتائج المباريات </li>
+                </ul>
+
+            </div>
+            <!-- //search + filter -->
+            <section class="search-form col-md-12">
+                <form action="" method="GET" name="search" role="search">
+                    <p class="inp-wrap search-wrap">
+                        <input type="search" name="search-term" id="search-field" class="grid-75" placeholder="بحث" /></p>
+
+
+                    <p class="inp-wrap cat-wrap">
+                        <select name="search categories" id="categories" class="grid-80">
+                            <option value="p1" selected>النادي</option>
+                            <option value="{{club.ID}}" *ngFor="let club of arrayclubs">{{club.NameA}}</option>                    
+                        </select>
+                    </p>
+
+                    <p class="inp-wrap submit-wrap">
+                        <button class="grid-100 btn">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </p>
+                </form>
+            </section>
+            <!-- //serach + filter -->
+        </div>
+    </div>
+</div>
+<!--// SubHeader \\-->
+
+<!--// Main Content \\-->
+<div class="sportsmagazine-main-content">
+
+    <!--// Main Section \\-->
+    <div class="sportsmagazine-main-section sportsmagazine-blogmodren-full">
+        <div class="container-fluid">
+            <div class="row">
+
+                <div class="col-md-12">
+                    <div class="sportsmagazine-playoff-staning">
+                        <h4>أحدث مباريات </h4>
+                        <table class="sportsmagazine-client-detail">
+                            <tr>
+                                <th>الفريق الاول</th>
+                                <th>الفريق التاني</th>
+                                <th>نقاط الفريق الاول</th>
+                                <th>نقاط الفريق التاني</th>
+                                <th>التاريخ</th>
+                                <th>المكان</th>
+
+                            </tr>
+                            <tr *ngFor="let nation of arraynationalmatch">
+                                <td>
+                                    <figure><img src="http://yakensolution.cloudapp.net/EBBFED/Content/Images/{{nation.LogoA}}" alt=""></figure>
+                                    <div class="player-stats-text">
+                                        <h6>{{nation.ClubA}}</h6>
+                                    </div>
+                                </td>
+                                <td>
+                                    <figure><img src="http://yakensolution.cloudapp.net/EBBFED/Content/Images/{{nation.LogoB}}" alt=""></figure>
+                                    <div class="player-stats-text">
+                                        <h6>{{nation.ClubB}} </h6>
+                                    </div>
+                                </td>
+                                <td>{{nation.ScoreA}}</td>
+                                <td>{{nation.ScoreB}}</td>
+                                <td>{{nation.Date | date:'yyyy-MM-dd'.toLocaleDateString}}</td>
+                                <td>{{nation.Place}}</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+    <!--// Main Section \\-->
+
+</div>
+<!--// Main Content \\-->

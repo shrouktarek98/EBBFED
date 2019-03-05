@@ -1,0 +1,205 @@
+<!-- //Sub header -->
+<div class="sportsmagazine-subheader">
+    <span class="subheader-transparent"></span>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>الاخبار </h1>
+            </div>
+            <div class="col-md-12">
+                <ul class="sportsmagazine-breadcrumb">
+                    <li [ngStyle]="{'font-size': '14px', 'font-weight': '700'}"><a href="index-2.html">الرئيسية</a></li>
+                    <li [ngStyle]="{'font-size': '14px', 'font-weight': '700'}"> تفاصيل الخبر </li>
+                </ul>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- //sub header -->
+
+<!--// Main Content \\-->
+<div class="sportsmagazine-main-content sportsmagazine-main-contentminus">
+
+
+
+    <!--// Main Section \\-->
+    <div class="sportsmagazine-main-section PT-25">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-8">
+                    <figure>
+                        <a [routerLink]="['/newdetails',arraynews[i].ID]"><img src="http://yakensolution.cloudapp.net/EBBFED/Content/Images/{{arraynews[i].ImageUrl}}" alt=""></a>
+                    </figure>
+                    <div class="sportsmagazine-bloglarge-text">
+                        <time datetime="2008-02-14 20:00"> {{arraynews[i].CreationDate| date:'yyyy-MM-dd'.toLocaleDateString}}</time>
+                        <h3><a [routerLink]="['/newdetails',arraynews[i].ID]">{{arraynews[i].TitleA}}</a></h3>
+
+                    </div>
+                    <div class="sportsmagazine-rich-editor">
+                        <blockquote [innerHtml]="arraynews[i].LongDescriptionA">
+                            <span></span>
+                        </blockquote>
+                        <div class="sportsmagazine-post-tags">
+
+                            <div class="sportsmagazine-blog-social">
+                                <ul *ngFor="let contact of arraycontact">
+                                    <li><a [routerLink]="['/newdetails',arraynews[i].ID]" (click)="showpage(contact.FacebookURL)" class="color-one"><i class="fa fa-facebook"></i>فيس بوك</a></li>
+                                    <li><a [routerLink]="['/newdetails',arraynews[i].ID]" (click)="showpage(contact.TwitterURL)" class="color-two"><i class="fa fa-twitter"></i>تويتر</a></li>
+                                    <li><a [routerLink]="['/newdetails',arraynews[i].ID]" (click)="showpage(contact.YoutubeURL)" class="color-three"><i class="fa fa-youtube"></i>يوتيوب</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sportsmagazine-prenxt-post">
+                        <ul>
+                            <li>
+                                <div class="sportsmagazine-prev-post">
+                                    <div *ngIf="i+1!= arraynews.length">
+                                        <figure>
+                                            <a><img src="http://yakensolution.cloudapp.net/EBBFED/Content/Images/{{arraynews[i+1].ImageUrl}}" alt=""></a>
+                                        </figure>
+                                        <div class="sportsmagazine-prev-artical">
+                                            <h3><a [routerLink]="['/newdetails',arraynews[i+1].ID]">{{arraynews[i+1].TitleA}}</a></h3>
+                                            <div> <a [routerLink]="['/newdetails',arraynews[i+1].ID]" class="sportsmagazine-post-arrow"><i class="fa fa-angle-double-left"></i>
+                                                    الخبر السابق</a></div>
+                                        </div>
+                                    </div>
+                                    <div *ngIf="i+1== arraynews.length">
+                                        <figure>
+                                            <a><img src="http://yakensolution.cloudapp.net/EBBFED/Content/Images/{{arraynews[i].ImageUrl}}" alt=""></a>
+                                        </figure>
+                                        <div class="sportsmagazine-prev-artical">
+                                            <h3><a [routerLink]="['/newdetails',arraynews[i].ID]">{{arraynews[i].TitleA}}</a></h3>
+                                            <div> <a [routerLink]="['/newdetails',arraynews[i].ID]" class="sportsmagazine-post-arrow"><i class="fa fa-angle-double-left"></i>
+                                                    الخبر السابق</a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="sportsmagazine-next-post">
+                                    <div *ngIf="i!= 0">
+                                        <figure>
+                                            <a><img src="http://yakensolution.cloudapp.net/EBBFED/Content/Images/{{arraynews[i-1].ImageUrl}}" alt=""></a>
+                                        </figure>
+                                        <div class="sportsmagazine-next-artical">
+
+                                            <h3><a [routerLink]="['/newdetails',arraynews[i-1].ID]"> {{arraynews[i-1].TitleA}}  </a></h3>
+                                            <div> <a [routerLink]="['/newdetails',arraynews[i-1].ID]" class="sportsmagazine-post-arrow">الخبر التالي <i
+                                                      class="fa fa-angle-double-right"></i></a></div>
+                                        </div>
+                                    </div>
+                                    <div *ngIf="i== 0">
+                                        <figure>
+                                            <a><img src="http://yakensolution.cloudapp.net/EBBFED/Content/Images/{{arraynews[i].ImageUrl}}" alt=""></a>
+                                        </figure>
+                                        <div class="sportsmagazine-next-artical">
+
+                                            <h3><a [routerLink]="['/newdetails',arraynews[i].ID]"> {{arraynews[i].TitleA}}  </a></h3>
+                                            <div> <a [routerLink]="['/newdetails',arraynews[i].ID]" class="sportsmagazine-post-arrow right">الخبر التالي <i
+                                                      class="fa fa-angle-double-right"></i></a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="sportsmagazine-section-heading">
+                        <h2>أخبار ذات صلة</h2>
+                    </div>
+                    <div class="sportsmagazine-related-article sportsmagazine-blog-artical">
+                        <ul class="row">
+                            <li class="col-md-4" *ngFor="let new of arraynews">
+                                <figure>
+                                    <a [routerLink]="['/newdetails',new.ID]"><img src="http://yakensolution.cloudapp.net/EBBFED/Content/Images/{{new.ImageUrl}}" alt=""><i class="fa fa-link"></i></a>
+                                </figure>
+                                <div class="sportsmagazine-article-text">
+                                    <time datetime="2008-02-14 20:00">{{new.CreationDate |date:'yyyy-MM-dd'.toLocaleDateString}} </time>
+                                    <h5><a [routerLink]="['/newdetails',new.ID]">{{new.TitleA}} </a></h5>
+                                </div>
+                                <ul class="sportsmagazine-article-options">
+                                    <li><a [routerLink]="['/newdetails',new.ID]"><i class="fa fa-eye"></i> {{new.Views}}</a></li>
+
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </div>
+
+
+                </div>
+
+                <!--// SideBar \\-->
+                <aside class="col-md-4">
+
+
+                    <!--// Widget Cetagories \\-->
+                    <div class="sportsmagazine-widget-heading">
+                        <h2>فريق الترتيب</h2>
+                    </div>
+                    <div class="widget widget_team_ranking">
+
+                        <table>
+                            <tr>
+                                <th>الترتيب</th>
+                                <th>الفريق</th>
+                                <th>L</th>
+                                <th>W</th>
+                                <th>IG</th>
+                                <th>OG</th>
+                                <th>PTS</th>
+                            </tr>
+                            <tr *ngFor="let match of arraytablematch ; let i=index">
+                                <th>{{i+1}}</th>
+                                <td>{{match.ClubA.NameA}}</td>
+                                <td>{{match.Lose}}</td>
+                                <td>{{match.Winner}}</td>
+                                <td>{{match.INGoals}}</td>
+                                <td>{{match.OutGoals}}</td>
+                                <td>{{match.Points}}</td>
+                            </tr>
+
+                        </table>
+
+
+                    </div>
+                    <!--// Widget Cetagories \\-->
+
+                    <!--// Widget Upcoming Matches \\-->
+                    <div class="sportsmagazine-widget-heading">
+                        <h2>المباريات القادمة</h2>
+                    </div>
+                    <div class="widget widget_matches">
+                        <ul>
+                            <li *ngFor="let item of list">
+                                <div class="sportsmagazine-team-one">
+                                    <h6><a href="fixture-detail.html">اسم الفريق</a></h6>
+                                    <span>مباراه</span>
+                                </div>
+                                <span>VS</span>
+                                <div class="sportsmagazine-team-two">
+                                    <h6><a href="fixture-detail.html">اسم الفريق</a></h6>
+                                    <span>مباراه</span>
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <!--// Widget Upcoming Matches \\-->
+
+
+
+                </aside>
+                <!--// SideBar \\-->
+
+
+            </div>
+        </div>
+    </div>
+    <!--// Main Section \\-->
+
+</div>
+<!--// Main Content \\-->

@@ -1,0 +1,56 @@
+<!--// SubHeader \\-->
+<div class="sportsmagazine-subheader">
+    <span class="subheader-transparent"></span>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1> المجلس الحالى </h1>
+            </div>
+            <div class="col-md-12">
+                <ul class="sportsmagazine-breadcrumb">
+                    <li [ngStyle]="{'font-size': '14px', 'font-weight': '700'}"><a href=" index-2.html ">الاتحاد</a></li>
+                    <li [ngStyle]="{ 'font-size': '14px', 'font-weight': '700'}"> المجلس الحالى </li>
+                </ul>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+<!--// SubHeader \\-->
+
+<!--// Main Content \\-->
+<div class="sportsmagazine-main-content">
+
+    <!--// Main Section \\-->
+    <div class="sportsmagazine-main-section sportsmagazine-blogmodren-full">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="sportsmagazine-fancy-title-two">
+                        <h2> المجلس الحالى <span></span></h2>
+                    </div>
+                </div>
+                <div class="sportsmagazine-player sportsmagazine-player-grid">
+                    <ul class="row">
+                        <li class="col-md-3" *ngFor="let council of arraycouncilpresident">
+                            <figure>
+                                <a href="shop-detail.html"><img src="http://yakensolution.cloudapp.net/EBBFED/Content/Images/{{council.ImageUrl}}" alt=""><i class="fa fa-link"></i></a><span></span>
+                            </figure>
+                            <div class="sportsmagazine-player-grid-text">
+                                <h5><a href="player-detail.html">{{council.NameA}} </a></h5>
+                                <p>{{council.TitleA}}</p>
+                                <p [innerHtml]="council.BriefA"></p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!--// Main Section \\-->
+
+</div>
+<!--// Main Content \\-->

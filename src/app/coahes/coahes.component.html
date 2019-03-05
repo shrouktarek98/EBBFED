@@ -1,0 +1,80 @@
+<!--// SubHeader \\-->
+<div class="sportsmagazine-subheader">
+    <span class="subheader-transparent"></span>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>قائمة بالمدربين</h1>
+            </div>
+            <div class="col-md-12">
+                <ul class="sportsmagazine-breadcrumb">
+                    <li [ngStyle]="{'font-size': '14px', 'font-weight': '700'}"><a href="index-2.html">الرئيسية</a></li>
+                    <li [ngStyle]="{'font-size': '14px', 'font-weight': '700'}">المدربين</li>
+                </ul>
+            </div>
+            <!-- //search + filter -->
+            <section class="search-form col-md-12">
+                <form action="" method="GET" name="search" role="search" #Search="ngForm" (ngSubmit)="done(Search.value)">
+                    <p class="inp-wrap search-wrap">
+                        <input type="search" name="search-term" id="search-field" class="grid-75" placeholder="بحث" /></p>
+                    <p class="inp-wrap cat-wrap">
+                        <select name="selectclub" [(ngModel)]="selectclub" id="categories" class="grid-80">
+                            <option value="1" selected>النادي</option>
+                            <option *ngFor="let club of arrayclubs" value="{{club.NameA}}" >{{club.NameA}}</option>
+                            
+                        </select>
+                    </p>
+
+                    <p class="inp-wrap submit-wrap">
+                        <button class="grid-100 btn">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </p>
+                </form>
+            </section>
+            <!-- //serach + filter -->
+        </div>
+    </div>
+</div>
+<!--// SubHeader \\-->
+
+<!--// Main Content \\-->
+<div class="sportsmagazine-main-content">
+
+    <!--// Main Section \\-->
+    <div class="sportsmagazine-main-section sportsmagazine-player-listfull">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-12">
+                    <div class="sportsmagazine-player sportsmagazine-player-list">
+                        <ul class="row">
+                            <li class="col-md-6" *ngFor="let coahe of arrayclubcoahes">
+                                <figure>
+                                    <a [routerLink]="['/coahedetails',coahe.ID]"><img src="http://yakensolution.cloudapp.net/EBBFED/Content/Images/{{coahe.ImageUrl}}" alt=""><i class="fa fa-link"></i></a>
+                                </figure>
+
+                                <div class="sportsmagazine-player-list-text">
+
+                                    <h5 [ngStyle]="{'font-size': '18px'}">
+                                        <a [routerLink]="['/coahedetails',coahe.ID]">{{coahe.NameA}}</a></h5>
+                                    <a [ngStyle]="{ 'font-size': '15px'} " [routerLink]="[ '/coahedetails',coahe.ID] " class="sportsmagazine-forword-btn ">{{coahe.Category}}</a>
+                                    <h3 [ngStyle]="{ 'color': '#fff'} ">{{coahe.ClubName}}</h3>
+                                    <p [ngStyle]="{ 'font-size': '15px'} " [innerHtml]="coahe.TitleA "></p>
+                                </div>
+                            </li>
+
+
+                        </ul>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <!--// Main Section \\-->
+
+</div>
+<!--// Main Content \\-->

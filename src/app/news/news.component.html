@@ -1,0 +1,90 @@
+<!--// SubHeader \\-->
+<div class="sportsmagazine-subheader">
+    <span class="subheader-transparent"></span>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>الاخبار </h1>
+            </div>
+            <div class="col-md-12">
+                <ul class="sportsmagazine-breadcrumb">
+                    <li [ngStyle]="{'font-size': '14px', 'font-weight': '700'}"><a href="index-2.html">الرئيسية</a></li>
+                    <li [ngStyle]="{'font-size': '14px', 'font-weight': '700'}">موجز الاخبار </li>
+                </ul>
+
+            </div>
+            <!-- //search + filter -->
+            <section class="search-form col-md-12">
+                <form action="" method="GET" name="search" role="search">
+                    <p class="inp-wrap search-wrap">
+                        <input type="search" name="search-term" id="search-field" class="grid-75" placeholder="بحث" /></p>
+                    <p class="inp-wrap cat-wrap">
+                        <select name="search categories" id="categories" class="grid-80">
+                            <option value="1" selected>النادي</option>
+                            <option *ngFor="let club of arrayclubs" value="{{club.ID}}">{{club.NameA}}</option>
+                        </select>
+                    </p>
+                    <p class="inp-wrap cat-wrap">
+                        <select name="search categories" id="categories" class="grid-80">
+                            <option value="p1" selected>اللاعب</option>
+                            <option *ngFor="let player of arrayplayers" value="{{player.ID}}">{{player.NameA}}</option> 
+                        </select>
+                    </p>
+                    <p class="inp-wrap submit-wrap">
+                        <button class="grid-100 btn">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </p>
+                </form>
+            </section>
+            <!-- //serach + filter -->
+        </div>
+    </div>
+</div>
+<!--// SubHeader \\-->
+
+<!--// Main Content \\-->
+<div class="sportsmagazine-main-content">
+
+    <!--// Main Section \\-->
+    <div class="sportsmagazine-main-section sportsmagazine-blogmodren-full">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-12">
+                    <div class="sportsmagazine-blog sportsmagazine-blog-grid">
+                        <ul class="row">
+                            <li class="col-md-4" *ngFor="let news of arraynews">
+                                <figure>
+                                    <a><img src="http://yakensolution.cloudapp.net/EBBFED/Content/Images/{{news.ImageUrl}}" alt=""></a>
+                                    <figcaption>
+                                        <span><small>مميزه</small></span>
+                                        <a class="sportsmagazine-link-btn"><i class="fa fa-link"></i></a>
+                                    </figcaption>
+                                </figure>
+                                <section class="news">
+                                    <h2><a [routerLink]="['/newdetails',news.ID]">{{news.TitleA}}</a></h2>
+                                    <p [innerHtml]="news.ShortDescriptionA"></p>
+                                    <a [routerLink]="['/newdetails',news.ID]" class="sportsmagazine-readmore-btn">أقرا المزيد  <i class="fa fa-arrow-circle-o-right"></i></a>
+
+                                </section>
+                                <div class="sportsmagazine-blog-grid-options">
+                                    <ul [ngStyle]="{'width': '100%'}">
+                                        <li><i class="fa fa-calendar"></i> <a [routerLink]="['/news']">{{news.CreationDate |  date:'yyyy-MM-dd'.toLocaleDateString}}</a></li>
+                                        <li><i class="fa fa-eye"></i> <a [routerLink]="['/news']">{{news.Views}}</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <!--// Main Section \\-->
+
+</div>
+<!--// Main Content \\-->

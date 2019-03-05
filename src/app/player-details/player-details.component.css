@@ -1,0 +1,33 @@
+.sportsmagazine-main-section,
+.sportsmagazine-rich-editor,
+.portsmagazine-post-tags,
+.sportsmagazine-blog-social,
+ul,
+li,
+a {
+    direction: rtl;
+    text-align: right;
+}
+
+ul,
+.sportsmagazine-blog-social {
+    width: 100%;
+}
+
+li h5 {
+    font-size: 18px;
+}
+
+li span {
+    font-size: 15px;
+}
+
+.sportsmagazine-client-detail tr th {
+    text-align: center;
+    font-size: 18px;
+}
+
+.sportsmagazine-client-detail tr td {
+    text-align: center;
+    font-size: 15px;
+}

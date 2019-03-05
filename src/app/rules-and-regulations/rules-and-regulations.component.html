@@ -1,0 +1,96 @@
+<!--// SubHeader \\-->
+<div class="sportsmagazine-subheader">
+    <span class="subheader-transparent"></span>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>القواعد والقوانین </h1>
+            </div>
+            <div class="col-md-12">
+                <ul class="sportsmagazine-breadcrumb">
+                    <li [ngStyle]="{'font-size': '14px', 'font-weight': '700'}"><a href="index-2.html">الرئيسية</a></li>
+                    <li [ngStyle]="{'font-size': '14px', 'font-weight': '700'}">القواعد والقوانین </li>
+                </ul>
+
+            </div>
+            <!-- //search + filter -->
+            <section class="search-form col-md-12">
+                <form action="" method="GET" name="search" role="search">
+                    <p class="inp-wrap search-wrap">
+                        <input type="search" name="search-term" id="search-field" class="grid-75" placeholder="بحث" /></p>
+
+
+                    <p class="inp-wrap submit-wrap">
+                        <button class="grid-100 btn">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </p>
+                </form>
+            </section>
+            <!-- //serach + filter -->
+        </div>
+    </div>
+</div>
+<!--// SubHeader \\-->
+
+<!--// Main Content \\-->
+<div class="sportsmagazine-main-content">
+
+    <!--// Main Section \\-->
+    <div class="sportsmagazine-main-section sportsmagazine-blogmodren-full">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-8">
+                    <div id="content">
+                        <div class="Roles" *ngFor="let rule of arrayrules">
+                            <div class="sportsmagazine-widget-heading">
+                                <h2> {{rule.NameA}}</h2>
+                            </div>
+                            <p>{{rule.ShortDescriptionA}}</p>
+                            <a class="profisional_players" id="cmd" download="true" href="http://yakensolution.cloudapp.net/EBBFED/Content/Pdfs/{{rule.PdfName}}" target="_blank"> اقرا ك PDF <i class="fa fa-arrow-left"></i></a>
+                        </div>
+                    </div>
+                    <div id="editor"></div>
+
+
+                </div>
+                <!--// SideBar \\-->
+                <aside class="col-md-4">
+
+                    <!--// Widget Upcoming Matches \\-->
+                    <div class="sportsmagazine-widget-heading">
+                        <h2>المباريات القادمة</h2>
+                    </div>
+                    <div class="widget widget_matches">
+                        <ul>
+                            <li *ngFor="let item of list">
+                                <div class="sportsmagazine-team-one">
+                                    <h6><a href="fixture-detail.html">اسم الفريق</a></h6>
+                                    <span>مباراه</span>
+                                </div>
+                                <span>VS</span>
+                                <div class="sportsmagazine-team-two">
+                                    <h6><a href="fixture-detail.html">اسم الفريق</a></h6>
+                                    <span>مباراه</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--// Widget Upcoming Matches \\-->
+
+
+
+
+
+                </aside>
+                <!--// SideBar \\-->
+
+
+            </div>
+        </div>
+    </div>
+    <!--// Main Section \\-->
+
+</div>
+<!--// Main Content \\-->

@@ -1,0 +1,45 @@
+form {
+    margin-top: 0px;
+}
+
+.cat-wrap #categories option {
+    font-size: 16px;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+}
+
+select,
+input,
+button {
+    text-transform: none;
+    font-size: large;
+    font-weight: 400;
+    height: 45px;
+}
+
+button {
+    background-color: #f0eef0;
+    border: 1px solid #dfdfdf;
+    color: #666666;
+    padding-right: 24px;
+}
+
+img,
+.sportsmagazine-player-list figure~.sportsmagazine-player-list-text {
+    height: 350px;
+}
+
+figure {
+    width: 50%;
+}
+
+.sportsmagazine-player-list figure~.sportsmagazine-player-list-text {
+    overflow: hidden;
+    text-align: right;
+    width: 50%;
+    margin: 0px;
+}
+
+form {
+    margin-top: 0px;
+}

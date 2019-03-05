@@ -1,0 +1,109 @@
+<!--// Main Content \\-->
+<div class="sportsmagazine-main-content sportsmagazine-main-contentminus">
+
+    <!--// Main Section \\-->
+    <div class="sportsmagazine-main-section sportsmagazine-thumb sportsmagazine-player-thumb">
+        <span class="thumb-transparent"></span>
+
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-12">
+                    <div class="sportsmagazine-player-thumb-wrap">
+                        <figure><img src="http://yakensolution.cloudapp.net/EBBFED/Content/Images/{{coahedetails.ImageUrl}}" alt=""></figure>
+                        <div class="sportsmagazine-player-thumb-text">
+                            <h3> <br><span>  {{coahedetails.NameA}} </span></h3>
+                            <ul class="sportsmagazine-player-info">
+                                <li>
+                                    <h5>النادي:</h5>
+                                    <span>{{coahedetails.ClubName}}  </span>
+                                </li>
+                                <li>
+                                    <h5>التصنيف:</h5>
+                                    <span>{{coahedetails.Category}}</span>
+                                </li>
+                                <li>
+                                    <h5>السن:</h5>
+                                    <span>{{coahedetails.Age}} سنة</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!--// Main Section \\-->
+
+    <!--// Main Section \\-->
+    <div class="sportsmagazine-main-section">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-8">
+                    <div class="sportsmagazine-section-heading">
+                        <h2>سيره ذاتيه عن المدرب </h2>
+                    </div>
+                    <div class="sportsmagazine-rich-editor">
+
+                        <blockquote [innerHtml]="coahedetails.DescriptionA">
+                            <span></span>
+                        </blockquote>
+
+                        <div class="sportsmagazine-post-tags">
+
+                            <div class="sportsmagazine-blog-social">
+                                <ul *ngFor="let contact of arraycontact">
+                                    <li><a [routerLink]="['/coahedetails',coahedetails.ID]" (click)="showpage(contact.FacebookURL)" class="color-one"><i class="fa fa-facebook"></i>فيس بوك</a></li>
+                                    <li><a [routerLink]="['/coahedetails',coahedetails.ID]" (click)="showpage(contact.TwitterURL)" class="color-two"><i class="fa fa-twitter"></i>تويتر</a></li>
+                                    <li><a [routerLink]="['/coahedetails',coahedetails.ID]" (click)="showpage(contact.YoutubeURL)" class="color-three"><i class="fa fa-google-plus"></i>يوتيوب</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+                <!--// SideBar \\-->
+                <aside class="col-md-4">
+
+                    <!--// Widget Upcoming Matches \\-->
+                    <div class="sportsmagazine-widget-heading">
+                        <h2>المباريات القادمة</h2>
+                    </div>
+                    <div class="widget widget_matches">
+                        <ul>
+                            <li *ngFor="let item of list">
+                                <div class="sportsmagazine-team-one">
+                                    <h6><a href="fixture-detail.html">اسم الفريق</a></h6>
+                                    <span>مباراه</span>
+                                </div>
+                                <span>VS</span>
+                                <div class="sportsmagazine-team-two">
+                                    <h6><a href="fixture-detail.html">اسم الفريق</a></h6>
+                                    <span>مباراه</span>
+                                </div>
+                            </li>
+
+
+                        </ul>
+                    </div>
+                    <!--// Widget Upcoming Matches \\-->
+
+
+
+
+                </aside>
+                <!--// SideBar \\-->
+
+
+            </div>
+        </div>
+    </div>
+    <!--// Main Section \\-->
+
+</div>
+<!--// Main Content \\-->

@@ -1,3 +1,6 @@
+<!--// Header \\-->
+
+<header class="sportsmagazine-header-one"></header>
 <header id="sportsmagazine-header" class="sportsmagazine-header-one">
 
     <!--// MainSection \\-->
@@ -5,117 +8,123 @@
         <div class="container">
             <div class="row">
                 <aside class="col-md-2">
-                    <a href="index-2.html" class="sportsmagazine-logo"><img src="images/logo-1.png" alt=""></a>
+                    <a href="index-2.html" class="sportsmagazine-logo"><img src="../../assets/images/logo-1.png" alt=""></a>
                 </aside>
                 <div class="col-md-10">
                     <div class="sportsmagazine-right-section">
                         <nav class="navbar navbar-default">
                             <div class="navbar-header">
                                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="true">
-                                  <span class="sr-only">Toggle navigation</span>
-                                  <span class="icon-bar"></span>
-                                  <span class="icon-bar"></span>
-                                  <span class="icon-bar"></span>
-                              </button>
+                                                <span class="sr-only">Toggle navigation</span>
+                                                <span class="icon-bar"></span>
+                                                <span class="icon-bar"></span>
+                                                <span class="icon-bar"></span>
+                                            </button>
                             </div>
                             <div class="collapse navbar-collapse" id="navbar-collapse-1">
-                                <ul class="nav navbar-nav">
-                                    <li class="active">
-                                        <a href="index.html">الصفحة الرئيسية</a>
+                                <ul class="nav navbar-nav" style="flex-direction: row;">
+                                    <li [ngClass]="this.router.url === '/' ? 'btn active' : 'btn'" id="1">
+                                        <a [routerLink]="['/']">الصفحة الرئيسية</a>
 
                                     </li>
-                                    <li>
-                                        <a href="player-grid.html">اللاعبين</a>
 
-                                    </li>
-                                    <li>
-                                        <a href="#">المدربين</a>
-
-                                    </li>
-                                    <li>
-                                        <a href="#">الحكام</a>
-
-                                    </li>
-                                    <li>
-                                        <a href="History_of_the_Union.html">الإتحاد</a>
+                                    <li [ngClass]="this.router.url === '/historyofunion' || this.router.url === '/councilpresident' || this.router.url === '/decision' ? 'btn active' : 'btn'" id="2">
+                                        <a>الإتحاد</a>
                                         <ul class="sportsmagazine-dropdown-menu">
                                             <li>
-                                                <a href="History_of_the_Union.html"> تاريخ الإتحاد</a>
-
+                                                <a [routerLink]="['/historyofunion']"> تاريخ الإتحاد</a>
                                             </li>
                                             <li>
-                                                <a href="Council_of_Presidents.html"> مجلس الإتحاد</a>
+                                                <a [routerLink]="['/councilpresident']"> مجلس الإتحاد</a>
                                             </li>
                                             <li>
-                                                <a href="Decisions.html">قرارات المجلس</a>
+                                                <a [routerLink]="['/decision']">قرارات المجلس</a>
                                             </li>
                                             <li>
-                                                <a href="#"> لجان الإتحاد</a>
+                                                <a> لجان الإتحاد</a>
                                             </li>
 
                                         </ul>
                                     </li>
-                                    <li>
-                                        <a href="Table_Matches">المباريات</a>
-                                        <ul class="sportsmagazine-dropdown-menu">
-                                            <li>
-                                                <a href="Rules_and_Regulations.html"> القواعد والقوانین</a>
+                                    <li [ngClass]="this.router.url === '/news' ? 'btn active' : 'btn'" id="5">
+                                        <a [routerLink]="['/news']"> الأخبار</a>
 
-                                            </li>
-
-                                            <li>
-                                                <a href="Table_Matches.html">جدول المباریات</a>
-                                            </li>
-                                            <li>
-                                                <a href="Match-results.html">نتائج المباریات </a>
-                                            </li>
-
-                                        </ul>
                                     </li>
-                                    <li>
-                                        <a href="Table_Matches.html">الفرق الوطنية</a>
+
+                                    <li [ngClass]="this.router.url === '/nationalmatch' || this.router.url === '/news'  ? 'btn active' : 'btn'" id="4">
+                                        <a>الفرق الوطنية</a>
                                         <ul class="sportsmagazine-dropdown-menu">
                                             <li>
-                                                <a href="Match-results.html"> نتائج المباریات</a>
+                                                <a [routerLink]="['/nationalmatch']"> نتائج المباریات</a>
 
                                             </li>
                                             <li>
-                                                <a href="blog-grid.html"> آخر الأخبار </a>
+                                                <a [routerLink]="['/news']"> آخر الأخبار </a>
                                             </li>
                                             <li>
                                                 <a href="Table_Matches.html">الجداول الخاصة بالمباریات أو
-                                                  البطولات</a>
+                                                                البطولات</a>
                                             </li>
 
                                         </ul>
                                     </li>
-                                    <li>
-                                        <a href="blog-grid.html"> الأخبار</a>
-
-                                    </li>
-                                    <li>
-                                        <a href="#"> الأندية</a>
-
-                                    </li>
-                                    <li>
-                                        <a href="#"> 3 x 3</a>
+                                    <li [ngClass]="this.router.url === '/competitions' ? 'btn active' : 'btn'" id="8">
+                                        <a> 3 x 3</a>
                                         <ul class="sportsmagazine-dropdown-menu">
 
                                             <li>
-                                                <a href="#"> ترتيب الفرق العالمية في بطولة 3 * 3 </a>
+                                                <a href="https://fiba3x3.basketball/en/rankings/individual.html" target="_blank"> ترتيب الفرق العالمية في بطولة 3 * 3 </a>
                                             </li>
                                             <li>
-                                                <a href="#">قوانين وقواعد اللعبة</a>
+                                                <a href="https://fiba3x3.basketball/en/rankings/individual.html" target="_blank">قوانين وقواعد اللعبة</a>
                                             </li>
                                             <li>
-                                                <a href="#"> مسابقات</a>
+                                                <a [routerLink]="['/competitions']"> مسابقات</a>
                                             </li>
 
 
                                         </ul>
                                     </li>
-                                    <li>
-                                        <a href="contact-us.html">اتصل بنا</a>
+                                    <li [ngClass]="this.router.url === '/rulerandregulation' || this.router.url === '/tablematch' ||  this.router.url === '/matchresult' ? 'btn active' : 'btn'" id="3">
+                                        <a>المباريات</a>
+                                        <ul class="sportsmagazine-dropdown-menu">
+                                            <li>
+                                                <a [routerLink]="['/rulerandregulation']"> القواعد والقوانین</a>
+
+                                            </li>
+
+                                            <li>
+                                                <a [routerLink]="['/tablematch']">جدول المباریات</a>
+                                            </li>
+                                            <li>
+                                                <a [routerLink]="['/matchresult']">نتائج المباریات </a>
+                                            </li>
+
+                                        </ul>
+                                    </li>
+                                    <li [ngClass]="this.router.url === '/players' || this.router.url === '/coahes' ||  this.router.url === '/rulers' ? 'btn active' : 'btn'" id="6">
+                                        <a>عناصر اللعبه </a>
+                                        <ul class="sportsmagazine-dropdown-menu">
+                                            <li>
+                                                <a [routerLink]="['/players']"> الاعبين </a>
+
+                                            </li>
+                                            <li>
+                                                <a [routerLink]="['/coahes']"> المدربين  </a>
+                                            </li>
+                                            <li>
+                                                <a [routerLink]="['/rulers']"> الحكام</a>
+                                            </li>
+
+                                        </ul>
+                                    </li>
+                                    <li [ngClass]="this.router.url === '/clubs' ? 'btn active' : 'btn'" id="7">
+                                        <a [routerLink]="['/clubs']"> الأندية</a>
+
+                                    </li>
+
+                                    <li [ngClass]="this.router.url === '/gallery' ? 'btn active' : 'btn'" id="9">
+                                        <a [routerLink]="['/gallery']">البوم الصور </a>
 
                                     </li>
                                 </ul>
@@ -132,3 +141,4 @@
     <!--// MainSection \\-->
 
 </header>
+<!--// Header \\-->

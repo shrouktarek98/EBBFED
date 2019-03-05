@@ -1,0 +1,123 @@
+<!--// Main Content \\-->
+<div class="sportsmagazine-main-content sportsmagazine-main-contentminus">
+
+    <!--// Main Section \\-->
+    <div class="sportsmagazine-main-section sportsmagazine-thumb sportsmagazine-player-thumb">
+        <span class="thumb-transparent"></span>
+
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-12">
+                    <div class="sportsmagazine-player-thumb-wrap">
+                        <figure><img src="http://yakensolution.cloudapp.net/EBBFED/Content/Images/{{playerdetails.ImageUrl}}" alt=""></figure>
+                        <div class="sportsmagazine-player-thumb-text">
+                            <h2>{{playerdetails.PlayerNumber}}</h2>
+                            <h3> <br><span> {{playerdetails.NameA}} </span></h3>
+                            <ul class="sportsmagazine-player-info">
+                                <li>
+                                    <h5>السن:</h5>
+                                    <span>{{playerdetails.Age}} سنة</span>
+                                </li>
+                                <li>
+                                    <h5>المركز:</h5>
+                                    <span>{{playerdetails.Position}}</span>
+                                </li>
+                                <li>
+                                    <h5>الطول:</h5>
+                                    <span>{{playerdetails.Height}} سم</span>
+                                </li>
+                                <li>
+                                    <h5>الوزن:</h5>
+                                    <span>{{playerdetails.Weight}} كيلو</span>
+                                </li>
+                                <li>
+                                    <h5>النادي:</h5>
+                                    <span>{{playerdetails.ClubName}}  </span>
+                                </li>
+                                <li>
+                                    <h5>المباريات الدولية:</h5>
+                                    <span>{{playerdetails.InternationalMatches}}  </span>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!--// Main Section \\-->
+
+    <!--// Main Section \\-->
+    <div class="sportsmagazine-main-section">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-8">
+                    <div class="sportsmagazine-section-heading">
+                        <h2>عن الاعب</h2>
+                    </div>
+                    <div class="sportsmagazine-rich-editor">
+                        <blockquote>هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي القارئ عن التركيز على الشكل الخارجي للنص أو شكل توضع الفقرات في الصفحة التي يقرأها. ولذلك يتم استخدام طريقة لوريم إيبسوم لأنها تعطي توزيعاَ طبيعياَ -
+                            <span></span>
+                        </blockquote>
+
+                        <div class="sportsmagazine-post-tags">
+
+                            <div class="sportsmagazine-blog-social">
+                                <ul *ngFor="let contact of arraycontact">
+                                    <li><a [routerLink]="['/playerdetails',playerdetails.ID]" (click)="showpage(contact.FacebookURL)" class="color-one"><i class="fa fa-facebook"></i>فيس
+                                                    بوك</a></li>
+                                    <li><a [routerLink]="['/playerdetails',playerdetails.ID]" (click)="showpage(contact.TwitterURL)" class="color-two"><i class="fa fa-twitter"></i>تويتر</a></li>
+                                    <li><a [routerLink]="['/playerdetails',playerdetails.ID]" (click)="showpage(contact.YoutubeURL)" class="color-three"><i class="fa fa-youtube"></i>يوتيوب</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sportsmagazine-section-heading">
+                        <h2> الانتقالات </h2>
+                    </div>
+                    <table class="sportsmagazine-client-detail">
+                        <tr>
+                            <th>انتقل من</th>
+                            <th>انتقل الى </th>
+                            <th>التاريخ</th>
+                        </tr>
+                        <tr *ngFor="let trans of playerdetails.Transfar">
+                            <td>{{trans.TransfarFrom}}</td>
+                            <td>{{trans.TransfarTo}}</td>
+                            <td>{{trans.Year}}</td>
+                        </tr>
+                    </table>
+                    <div class="sportsmagazine-section-heading">
+                        <h2>أندية سبق اللعب فيها </h2>
+                    </div>
+                    <table class="sportsmagazine-client-detail">
+                        <tr>
+                            <th> النادي</th>
+                            <th> من سنة </th>
+                            <th>إلى سنة</th>
+                        </tr>
+                        <tr *ngFor="let club of playerdetails.PreviousClubs">
+                            <td>{{club.ClubName}}</td>
+                            <td>{{club.YearFrom}}</td>
+                            <td>{{club.YearTo}}</td>
+                        </tr>
+                    </table>
+
+
+
+
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+    <!--// Main Section \\-->
+
+</div>
+<!--// Main Content \\-->

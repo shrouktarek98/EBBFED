@@ -1,0 +1,71 @@
+<!--// SubHeader \\-->
+<div class="sportsmagazine-subheader">
+    <span class="subheader-transparent"></span>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>قائمة بالحكام</h1>
+            </div>
+            <div class="col-md-12">
+                <ul class="sportsmagazine-breadcrumb">
+                    <li [ngStyle]="{'font-size': '14px', 'font-weight': '700'}"><a href="index-2.html">الرئيسية</a></li>
+                    <li [ngStyle]="{'font-size': '14px', 'font-weight': '700'}">الحكام</li>
+                </ul>
+            </div>
+            <!-- //search + filter -->
+            <section class="search-form col-md-12">
+                <form action="" method="GET" name="search" role="search">
+                    <p class="inp-wrap search-wrap">
+                        <input type="search" name="search-term" id="search-field" class="grid-75" placeholder="بحث" /></p>
+
+                    <p class="inp-wrap submit-wrap">
+                        <button class="grid-100 btn">
+                          <i class="fa fa-search"></i>
+                      </button>
+                    </p>
+                </form>
+            </section>
+            <!-- //serach + filter -->
+        </div>
+    </div>
+</div>
+<!--// SubHeader \\-->
+
+<!--// Main Content \\-->
+<div class="sportsmagazine-main-content">
+
+    <!--// Main Section \\-->
+    <div class="sportsmagazine-main-section sportsmagazine-player-listfull">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-12">
+                    <div class="sportsmagazine-player sportsmagazine-player-list">
+                        <ul class="row">
+                            <li class="col-md-6 ruler" *ngFor="let ruler of arrayrulers">
+                                <figure>
+                                    <a href="Coaches-detail.html"><img src="http://yakensolution.cloudapp.net/EBBFED/Content/Images/{{ruler.ImageUrl}}" alt=""><i class="fa fa-link"></i></a>
+                                </figure>
+
+                                <div class="sportsmagazine-player-list-text">
+
+                                    <h5 [ngStyle]="{'font-size': '18px'}"><a href="Coaches-detail.html">{{ruler.NameA}}</a></h5>
+                                    <a [ngStyle]="{'font-size': '15px'}" href="Coaches-detail.html" class="sportsmagazine-forword-btn">{{ruler.Category}}</a>
+                                    <p [ngStyle]="{'font-size': '15px', 'color':'#fff'}" [innerHtml]="ruler.DescriptionA"></p>
+                                </div>
+                            </li>
+
+
+                        </ul>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <!--// Main Section \\-->
+
+</div>
+<!--// Main Content \\-->

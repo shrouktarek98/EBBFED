@@ -1,0 +1,186 @@
+<!--// Main Banner \\-->
+<div class="sportsmagazine-banner" style="overflow:hidden">
+
+    <!--// Slider \\-->
+    <div class="sportsmagazine-banner-one">
+
+        <div class="sportsmagazine-banner-one-layer">
+            <img src="../../assets/extra-images/banner-1.jpg" alt="">
+            <span class="sportsmagazine-banner-pattren"></span>
+            <div class="sportsmagazine-banner-caption">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="sportsmagazine-banner-wrap text-center" style="width:100%">
+                                <h1> <strong class="sportsmagazine-color">الاتحاد</strong> المصري <strong class="Black">لكرة السله</strong> </h1>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--// Slider \\-->
+
+</div>
+
+<div class="sportsmagazine-main-content">
+
+    <!--// Main Section \\-->
+    <div class="sportsmagazine-main-section">
+        <div class="container">
+            <div class="row">
+
+
+
+                <!--// Content \\-->
+                <div class="col-md-8">
+
+
+
+                    <!--// Latest Match Result \\-->
+                    <div class="sportsmagazine-match-result">
+                        <div class="sportsmagazine-match-title">
+                            <h2 [ngStyle]="{'font-weight': 'bold'}"> أحدث المباريات </h2>
+                            <span [ngStyle]="{'font-weight': '500'}">{{arraymatchscore.Date | date:'yyyy-MM-dd'.toLocaleDateString}}</span>
+                        </div>
+                        <ul>
+                            <li>
+                                <img src="http://yakensolution.cloudapp.net/EBBFED/Content/Images/{{arraymatchscore.LogoB}}" alt="">
+                                <h2>
+                                    <a href="fixture-detail.html" [ngStyle]="{'color': '#fff', 'font-weight':'600'}">{{arraymatchscore.ClubB}}</a>
+                                </h2>
+
+                            </li>
+                            <li class="sportsmagazine-match-score">
+                                <h2 [ngStyle]="{'color': '#fff', 'font-weight':'600'}"> النتيجة</h2>
+                                <p>
+                                    <strong [ngStyle]="{'color': '#fff'}">{{arraymatchscore.ScoreB}}</strong>
+                                    <small>:</small> {{arraymatchscore.ScoreA}}</p>
+                            </li>
+                            <li>
+                                <img src="http://yakensolution.cloudapp.net/EBBFED/Content/Images/{{arraymatchscore.LogoA}}" alt="">
+                                <h2>
+                                    <a href="fixture-detail.html" [ngStyle]="{'color': '#fff', 'font-weight':'600'}">{{arraymatchscore.ClubA}}</a>
+                                </h2>
+
+                            </li>
+                        </ul>
+                    </div>
+                    <!--// Latest Match Result \\-->
+
+                    <!--// Fancy Title \\-->
+                    <div class="sportsmagazine-fancy-title text-right ">
+                        <h2> الان</h2>
+                    </div>
+                    <!--// Fancy Title \\-->
+
+                    <!--// Featured Slider \\-->
+                    <div class="sportsmagazine-featured-slider carousel slide" id="carouselExampleSlidesOnly" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="sportsmagazine-featured-slider-layer carousel-item active">
+                                <img src="../../assets/extra-images/featured-slider-1.jpg" alt="">
+                                <span class="sportsmagazine-black-transparent"></span>
+                                <div class="sportsmagazine-featured-caption">
+                                    <h2>هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي القارئ عن التركيز على الشكل الخارجي للنص أو شكل</h2>
+                                    <span class="sportsmagazine-color">03 ديسمبر 2017 / جون ماكسويلll</span>
+                                </div>
+                            </div>
+                            <div class="sportsmagazine-featured-slider-layer carousel-item " *ngFor="let new of arraynews">
+                                <img src="http://yakensolution.cloudapp.net/EBBFED/Content/Images/{{new.ImageUrl}}" alt="">
+                                <span class="sportsmagazine-black-transparent"></span>
+                                <div class="sportsmagazine-featured-caption">
+                                    <h2>{{new.TitleA}}</h2>
+                                    <span class="sportsmagazine-color">  {{new.CreationDate | date:'yyyy-MM-dd'.toLocaleDateString}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--// Featured Slider \\-->
+
+
+                    <!--// Fancy Title \\-->
+                    <div class="sportsmagazine-fancy-title text-right ">
+                        <h2> الاخبار</h2>
+                    </div>
+                    <!--// Fancy Title \\-->
+
+                    <div class="sportsmagazine-blog sportsmagazine-blog-grid">
+                        <ul class="row">
+                            <li class="col-md-6" *ngFor="let news of arraynews">
+                                <figure>
+                                    <a><img src="http://yakensolution.cloudapp.net/EBBFED/Content/Images/{{news.ImageUrl}}" alt=""></a>
+                                    <figcaption>
+                                        <span><small>مميزه</small></span>
+                                        <a class="sportsmagazine-link-btn"><i class="fa fa-link"></i></a>
+                                    </figcaption>
+                                </figure>
+                                <section class="news">
+                                    <h2><a [routerLink]="['/newdetails',news.ID]">{{news.TitleA}}</a></h2>
+                                    <p [innerHtml]="news.ShortDescriptionA"></p>
+                                    <a [routerLink]="['/newdetails',news.ID]" class="sportsmagazine-readmore-btn">أقرا المزيد  <i class="fa fa-arrow-circle-o-right"></i></a>
+
+                                </section>
+                                <div class="sportsmagazine-blog-grid-options">
+                                    <ul [ngStyle]="{'width': '100%'}">
+                                        <li><i class="fa fa-calendar"></i> <a [routerLink]="['/news']">{{news.CreationDate |  date:'yyyy-MM-dd'.toLocaleDateString}}</a></li>
+                                        <li><i class="fa fa-eye"></i> <a [routerLink]="['/news']">{{news.Views}}</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+
+
+                </div>
+                <!--// Content \\-->
+
+
+                <!--// SideBaar \\-->
+                <aside class="col-md-4 ">
+
+                    <!--// Widget TeamRanking \\-->
+                    <div class="widget widget_team_ranking ">
+                        <h3 [ngStyle]="{'text-align': 'right', 'margin-bottom': '30px', 'font-weight': '600'}">ترتيب الدوري - الممتاز أ رجال</h3>
+                        <table>
+                            <tr>
+                                <th>الترتيب</th>
+                                <th>الفريق</th>
+                                <th>لوجو</th>
+                                <th>L</th>
+                                <th>W</th>
+                                <th>G</th>
+                                <th>M</th>
+                                <th>PTS</th>
+                            </tr>
+                            <tr *ngFor="let match of arraytablematch; let i = index">
+                                <th>{{i+1}}</th>
+                                <td>{{match.ClubA.NameA}}</td>
+                                <td><img src="http://yakensolution.cloudapp.net/EBBFED/Content/Images/{{match.ClubA.Logo}}"></td>
+                                <td>{{match.Lose}}</td>
+                                <td>{{match.Winner}}</td>
+                                <td>{{match.OutGoals - match.INGoals}}</td>
+                                <td>{{match.NumberOfMatches}}</td>
+                                <td>{{match.Points}}</td>
+                            </tr>
+
+                        </table>
+
+                    </div>
+                    <!--// Widget TeamRanking \\-->
+
+                </aside>
+                <!--// SideBaar \\-->
+
+
+
+            </div>
+        </div>
+    </div>
+    <!--// Main Section \\-->
+
+</div>
+<!--// Main Content \\-->

@@ -1,0 +1,74 @@
+.sportsmagazine-subheader {
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+form {
+    margin-top: 0px;
+}
+
+.cat-wrap #categories option {
+    font-size: 16px;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+}
+
+select,
+input,
+button {
+    text-transform: none;
+    font-size: large;
+    font-weight: 400;
+    height: 45px;
+}
+
+button {
+    background-color: #f0eef0;
+    border: 1px solid #dfdfdf;
+    color: #666666;
+    padding-right: 24px;
+}
+
+h2 {
+    font-size: 25px;
+}
+
+.sportsmagazine-blog-grid figure img {
+    height: 300px;
+}
+
+.sportsmagazine-blog-grid section {
+    height: 150px;
+    overflow: auto;
+}
+
+.sportsmagazine-blog-grid section h2 {
+    text-align: right;
+    font-size: 18px;
+    line-height: 1.9;
+}
+
+.sportsmagazine-readmore-btn {
+    float: left;
+    color: #555555;
+}
+
+.sportsmagazine-blog-grid section p,
+body h1 {
+    font-size: 15px;
+}
+
+::-webkit-scrollbar {
+    width: 4px;
+    border-radius: 10px;
+    background-color: #bbbbbb;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #bbbbbb;
+}
+
+::-webkit-scrollbar-track {
+    /* -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3); */
+    background-color: #F5F5F5;
+}

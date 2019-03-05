@@ -1,0 +1,50 @@
+<!--// SubHeader \\-->
+<div class="sportsmagazine-subheader">
+    <span class="subheader-transparent"></span>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>ألبوم الصور </h1>
+            </div>
+            <div class="col-md-12">
+                <ul class="sportsmagazine-breadcrumb">
+                    <li [ngStyle]="{'font-size': '14px', 'font-weight': '700'}"><a href="index-2.html">الرئيسية</a></li>
+                    <li [ngStyle]="{'font-size': '14px', 'font-weight': '700'}"> ألبوم الصور </li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!--// SubHeader \\-->
+
+<!--// Main Content \\-->
+<div class="sportsmagazine-main-content">
+
+    <!--// Main Section \\-->
+    <div class="sportsmagazine-main-section sportsmagazine-blogmodren-full">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-12">
+                    <div class="sportsmagazine-blog sportsmagazine-blog-grid">
+                        <ul class="row">
+                            <li class="col-md-4" *ngFor="let Gallery of arraygallery">
+                                <figure class="gallery">
+                                    <a href=""><img src="http://yakensolution.cloudapp.net/EBBFED/Content/Images/{{Gallery.ImageUrl}}" alt=""></a>
+                                </figure>
+
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <!--// Main Section \\-->
+
+</div>
+<!--// Main Content \\-->

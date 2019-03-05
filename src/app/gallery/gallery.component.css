@@ -1,0 +1,7 @@
+img {
+    height: 300px;
+}
+
+.gallery a {
+    transform: translate(0px);
+}

@@ -1,0 +1,65 @@
+<!--// SubHeader \\-->
+<div class="sportsmagazine-subheader">
+    <span class="subheader-transparent"></span>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1> الاندية</h1>
+            </div>
+            <div class="col-md-12">
+                <ul class="sportsmagazine-breadcrumb">
+                    <li [ngStyle]="{'font-size': '14px', 'font-weight': '700'}"><a href="index.html">الرئيسية</a></li>
+                    <li [ngStyle]="{'font-size': '14px', 'font-weight': '700'}"> الاندية</li>
+                </ul>
+            </div>
+            <!-- //search + filter -->
+            <section class="search-form col-md-12">
+                <form ngf method="GET" name="search" role="search" #Search="ngForm" (ngSubmit)="done(Search.value)">
+                    <p class="inp-wrap search-wrap">
+                        <input type="search" name="search-term" [(ngModel)]="searchterm" id="search-field" class="grid-75" placeholder="بحث" /></p>
+                    <p class="inp-wrap cat-wrap">
+                        <select name="selectclub" [(ngModel)]="selectclub" id="categories" class="grid-80">
+                            <option value="1" selected>الدرجه</option>
+                            <option *ngFor="let division of arraydivision" value="{{division.NameA}}">{{division.NameA}}</option>
+                        </select>
+                    </p>
+
+                    <p class="inp-wrap submit-wrap">
+                        <button class="grid-100 btn">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </p>
+                </form>
+            </section>
+            <!-- //serach + filter -->
+
+        </div>
+    </div>
+</div>
+<!--// SubHeader \\-->
+
+<!--// Main Content \\-->
+<div class="sportsmagazine-main-content">
+
+    <!--// Main Section \\-->
+    <div class="sportsmagazine-player sportsmagazine-modern-player">
+        <div class="container">
+            <ul class="row">
+                <li [ngClass]="club.NameA !== null ? 'col-md-3' : 'd-none'" id={{club.ID}} *ngFor="let club of arrayclubdivision">
+                    <figure>
+                        <a [routerLink]="['/clubdetails',club.ID]"><img src="http://yakensolution.cloudapp.net/EBBFED/Content/Images/{{club.Logo}}" alt=""></a>
+                        <figcaption>
+                            <a [routerLink]="['/clubdetails',club.ID]">
+                                <h3> <span> {{club.NameA}}</span></h3>
+                            </a>
+                        </figcaption>
+                    </figure>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+    <!--// Main Section \\-->
+
+</div>
+<!--// Main Content \\-->

@@ -2,8 +2,9 @@
 
 /* @import url('https://fonts.googleapis.com/css?family=Itim|Varela+Round'); */
 
-@import url(css/bootstrap.css);
-@import url(css/bootstrap.min.css);
+
+/* @import url(css/bootstrap.css);
+@import url(css/bootstrap.rtl.min.css);
 @import url(css/color.css);
 @import url(css/fancybox.css);
 @import url(css/flaticon.css);
@@ -11,7 +12,8 @@
 @import url(css/plyr.css);
 @import url(css/responsive.css);
 @import url(css/rtl.css);
-@import url(css/slick-slider.css);
+@import url(css/slick-slider.css); */
+
 @font-face {
     font-family: DroidArabicKufiRegular;
     src: url(fonts/bahij-insan.ttf);
@@ -50,6 +52,19 @@ body h6 {
     font-style: normal;
     line-height: 1.5;
     margin: 0 0 8px;
+}
+
+.galleryclub h1 {
+    color: #fff;
+}
+
+.ruler .sportsmagazine-player-list-text h2 {
+    color: #fff;
+}
+
+.news h1 {
+    font-size: 15px;
+    text-align: right;
 }
 
 h1 {
@@ -4211,10 +4226,11 @@ blockquote:after {
 }
 
 blockquote span {
-    position: absolute;
+    /* position: absolute; */
     top: 0px;
     left: 0px;
     width: 100%;
+    font-weight: 600;
 }
 
 blockquote span:before {
@@ -5765,7 +5781,7 @@ blockquote span:before {
 }
 
 .sportsmagazine-fixture-gallery ul li {
-    float: left;
+    float: right;
     width: 33.333%;
     padding: 0px 5px;
     margin: 0px 0px 10px;
@@ -10143,7 +10159,7 @@ blockquote span:before {
     position: absolute;
     left: 0px;
     top: 10px;
-    background-color: #ff1111;
+    background-color: #ffdc11;
     width: 1px;
     height: 56px;
 }
@@ -10153,7 +10169,7 @@ blockquote span:before {
     position: absolute;
     left: -14px;
     bottom: 0px;
-    background-color: #ff1111;
+    background-color: #ffdc11;
     width: 56px;
     height: 1px;
 }
@@ -10170,7 +10186,7 @@ blockquote span:before {
     position: absolute;
     right: 0px;
     bottom: -15px;
-    background-color: #ff1111;
+    background-color: #ffdc11;
     width: 1px;
     height: 56px;
 }
@@ -10180,7 +10196,7 @@ blockquote span:before {
     position: absolute;
     right: -14px;
     bottom: 0px;
-    background-color: #ff1111;
+    background-color: #ffdc11;
     width: 56px;
     height: 1px;
 }
@@ -11640,4 +11656,11 @@ blockquote span:before {
     width: 154px;
     margin: 0px;
     padding-top: 46px;
+}
+
+.club-details figure,
+.sportsmagazine-player-thumb-wrap figure {
+    float: right;
+    width: 290px;
+    margin: 0px;
 }

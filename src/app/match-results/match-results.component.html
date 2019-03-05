@@ -1,0 +1,104 @@
+<!--// SubHeader \\-->
+<div class="sportsmagazine-subheader">
+    <span class="subheader-transparent"></span>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1> نتائج المباريات </h1>
+            </div>
+            <div class="col-md-12">
+                <ul class="sportsmagazine-breadcrumb">
+                    <li [ngStyle]="{'font-size': '14px', 'font-weight': '700'}"><a href="index-2.html">الرئيسية</a></li>
+                    <li [ngStyle]="{'font-size': '14px', 'font-weight': '700'}"> نتائج المباريات </li>
+                </ul>
+
+            </div>
+            <!-- //search + filter -->
+            <section class="search-form col-md-12">
+                <form action="" method="GET" name="search" role="search" #Search="ngForm" (ngSubmit)="done(Search.value)">
+                    <p class="inp-wrap search-wrap">
+                        <input type="search" name="search-term" id="search-field" class="grid-75" placeholder="بحث" /></p>
+
+                    <p class="inp-wrap cat-wrap">
+                        <select ngModel #selectage="ngModel" name="selectage" id="categories" class="grid-80">
+                            <option value="p1" selected>الفئة العمرية</option>
+                            <option value="{{age.ID}}" *ngFor="let age of arrayage">{{age.NameA}}</option>
+                        </select>
+                    </p>
+                    <p class="inp-wrap cat-wrap">
+                        <select [(ngModel)]="selectdevision" name="selectdevision" id="categories" class="grid-80">
+                            <option value="p2" selected>الدرجة </option>
+                            <option value="{{devision.ID}}" *ngFor="let devision of arraydevision">{{devision.NameA}}</option>
+                        </select>
+                    </p>
+                    <p class="inp-wrap submit-wrap">
+                        <button class="grid-100 btn">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </p>
+                </form>
+            </section>
+            <!-- //serach + filter -->
+        </div>
+    </div>
+</div>
+<!--// SubHeader \\-->
+
+<!--// Main Content \\-->
+<div class="sportsmagazine-main-content">
+
+    <!--// Main Section \\-->
+    <div class="sportsmagazine-main-section sportsmagazine-blogmodren-full">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-12">
+                    <div class="sportsmagazine-playoff-staning">
+                        <div class="sportsmagazine-widget-heading">
+                            <h2>فريق الترتيب</h2>
+                        </div>
+                        <table>
+                            <tr>
+                                <th>الترتيب</th>
+                                <th>الفريق</th>
+                                <th>لوجو</th>
+                                <th>L</th>
+                                <th>W</th>
+                                <th>G</th>
+                                <th>M</th>
+                                <th>PTS</th>
+                                <th>الفئة العمرية</th>
+                                <th>الدرجة</th>
+                                <th>الجولة</th>
+                            </tr>
+                            <tr *ngFor="let match of arraytablematchsearch; let i= index">
+                                <td>{{i+1}}</td>
+                                <td>{{match.ClubA.NameA}}</td>
+                                <td>
+                                    <figure><img src="http://yakensolution.cloudapp.net/EBBFED/Content/Images/{{match.ClubA.Logo}}" alt=""></figure>
+                                </td>
+
+                                <td>{{match.Lose}}</td>
+                                <td>{{match.Winner}}</td>
+                                <td>{{match.OutGoals - match.INGoals}}</td>
+                                <td>{{match.NumberOfMatches}}</td>
+                                <td>{{match.Points}}</td>
+                                <td>{{match.Age.NameA}}</td>
+                                <td>{{match.Division.NameA}}</td>
+                                <td>{{match.Round.NameA}}</td>
+                            </tr>
+
+                        </table>
+                    </div>
+
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+    <!--// Main Section \\-->
+
+</div>
+<!--// Main Content \\-->

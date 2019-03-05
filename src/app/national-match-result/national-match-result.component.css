@@ -1,0 +1,57 @@
+.sportsmagazine-subheader {
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+form {
+    margin-top: 0px;
+}
+
+.cat-wrap #categories option {
+    font-size: 16px;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+}
+
+select,
+input,
+button {
+    text-transform: none;
+    font-size: large;
+    font-weight: 400;
+    height: 45px;
+}
+
+button {
+    background-color: #f0eef0;
+    border: 1px solid #dfdfdf;
+    color: #666666;
+    padding-right: 15px;
+}
+
+tr td img {
+    width: 15px;
+}
+
+.sportsmagazine-playoff-staning {
+    text-align: right;
+    direction: rtl;
+}
+
+.sportsmagazine-playoff-staning h4 {
+    font-size: 20px;
+}
+
+table,
+tr {
+    width: 100%;
+}
+
+tr th {
+    font-size: 15px;
+    color: #666666;
+}
+
+tr td {
+    font-size: 13px;
+}

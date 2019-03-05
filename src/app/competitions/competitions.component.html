@@ -1,0 +1,75 @@
+<!--// SubHeader \\-->
+<div class="sportsmagazine-subheader">
+    <span class="subheader-transparent"></span>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1> المسابقات</h1>
+            </div>
+            <div class="col-md-12">
+                <ul class="sportsmagazine-breadcrumb">
+                    <li [ngStyle]="{'font-size': '14px', 'font-weight': '700'}"><a href="index.html">الرئيسية</a></li>
+                    <li [ngStyle]="{'font-size': '14px', 'font-weight': '700'}"> المسابقات</li>
+                </ul>
+            </div>
+            <!-- //search + filter -->
+            <section class="search-form col-md-12">
+                <form action="" method="GET" name="search" role="search">
+                    <p class="inp-wrap search-wrap">
+                        <input type="search" name="search-term" id="search-field" class="grid-75" placeholder="بحث" /></p>
+
+
+                    <p class="inp-wrap submit-wrap">
+                        <button class="grid-100 btn">
+
+                                    <i class="fa fa-search"></i>
+                                </button>
+                    </p>
+                </form>
+            </section>
+            <!-- //serach + filter -->
+
+        </div>
+    </div>
+</div>
+<!--// SubHeader \\-->
+
+<!--// Main Content \\-->
+<div class="sportsmagazine-main-content">
+
+    <!--// Main Section \\-->
+    <div class="sportsmagazine-main-section sportsmagazine-classic-fixturefull">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-12">
+                    <div class="sportsmagazine-fixture sportsmagazine-classic-fixture">
+                        <ul class="row">
+                            <li class="col-md-4" *ngFor="let com of arraycompetitions">
+                                <div class="sportsmagazine-classic-fixture-wrap">
+                                    <div class="headcompetion">
+                                        <h1>{{com.NameA}}</h1>
+                                    </div>
+                                    <div class="bodycompetion">
+                                        <time _ngcontent-c14="" datetime="2008-02-14 20:00"><i _ngcontent-c14="" class="fa fa-calendar"></i> 2019-02-05</time>
+                                        <h6 _ngcontent-c14=""><i _ngcontent-c14="" class="fa fa-map-marker"></i> Cairo Statdium</h6>
+                                        <a href="https://www.facebook.com/">التسجيل</a>
+                                    </div>
+                                    <div class="fottercompetion">
+                                        <a>التفاصيل</a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <!--// Main Section \\-->
+
+</div>
+<!--// Main Content \\-->

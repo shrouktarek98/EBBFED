@@ -1,0 +1,75 @@
+<div class="sportsmagazine-subheader">
+    <span class="subheader-transparent"></span>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>قائمة بالاعبين</h1>
+            </div>
+            <div class="col-md-12">
+                <ul class="sportsmagazine-breadcrumb">
+                    <li [ngStyle]="{'font-size': '14px', 'font-weight': '700'}"><a href="index-2.html">الرئيسية</a></li>
+                    <li [ngStyle]="{'font-size': '14px', 'font-weight': '700'}">اللاعبين</li>
+                </ul>
+            </div>
+            <!-- //search + filter -->
+            <section class="search-form col-md-12">
+                <form #Search="ngForm" (ngSubmit)="done(Search.value)">
+                    <p class="inp-wrap search-wrap">
+                        <input [(ngModel)]="searchterm" type="search" name="searchterm" id="search-field" class="grid-75" placeholder="بحث" /></p>
+                    <p class="inp-wrap cat-wrap">
+                        <select [(ngModel)]="selectclub" [ngModelOptions]="{standalone: true}" name="selectclub" id="categories" class="grid-80">
+                            <option value="" selected >النادي</option>
+                            <option  value="{{club.ID}}" *ngFor="let club of arrayclubs" >{{club.NameA}}</option>
+                            
+                        </select>
+
+                    </p>
+
+                    <p class="inp-wrap submit-wrap">
+                        <button type="submit" class="grid-100 btn" id="done">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </p>
+
+                </form>
+            </section>
+            <div class="col-md-12">
+                <h2><a href="#" [ngStyle]="{'color': '#fff'}">اللاعبين المحترفين</a></h2>
+            </div>
+            <!-- //serach + filter -->
+        </div>
+    </div>
+</div>
+<!--// SubHeader \\-->
+
+<!--// Main Content \\-->
+<div class="sportsmagazine-main-content">
+
+    <!--// Main Section \\-->
+    <div class="sportsmagazine-main-section sportsmagazine-player-gridfull">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-12">
+                    <div class="sportsmagazine-player sportsmagazine-player-grid">
+                        <ul class="row">
+                            <li class="col-md-3" *ngFor="let player of arrayplayerclub |search : 'NameA' : searchterm">
+                                <figure>
+                                    <a [routerLink]="['/playerdetails',player.ID]"><img src="http://yakensolution.cloudapp.net/EBBFED/Content/Images/{{player.ImageUrl}}" alt=""><i class="fa fa-link"></i></a><span></span></figure>
+                                <div class="sportsmagazine-player-grid-text">
+                                    <h5><a [routerLink]="['/playerdetails',player.ID]">{{player.NameA}}</a></h5>
+                                    <p> <i class=" fa fa-user"> </i> {{player.Age}} سنه <span class="club_name"><i class=" fa fa-fort-awesome">
+                                                    </i> {{player.ClubName}}</span></p>
+
+                                </div>
+
+                            </li>
+
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
